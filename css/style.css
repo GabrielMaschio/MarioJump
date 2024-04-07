@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    border-bottom: 30px solid rgb(35, 160, 35);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+    cursor: default;
+}
+
+.game-start {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.222);
+}
+
+.game-start img {
+    z-index: 1;
+    margin-bottom: 80px;
+}
+
+button {
+    background-color: transparent;
+    font-family: "Press Start 2P", system-ui;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 8px;
+    font-size: 2rem;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    color: red;
+}
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.game-re-start {    
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.322);
+}
+
+.game-re-start img {
+    top: 10px;
+    width: 1416.95px;
+}
+
+p {
+    font-family: "Press Start 2P", system-ui;
+    color: rgb(235, 234, 234);
+    letter-spacing: 8px;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    cursor: default;
+}
+
+p span {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.count {
+    position: absolute;
+    top: 20px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+}
+
+.mario {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    top: 55px;
+    right: -550px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+.pipe-animation {    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    } 
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    } 
+
+    to {
+        right: 100%;
+    }
+}
